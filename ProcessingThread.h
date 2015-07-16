@@ -19,6 +19,7 @@ public:
   ProcessingThread(TSDataHandler<Mat> *dh_in, TSDataHandler<Mat> *dh_out = NULL);
   ~ProcessingThread();
 private:
+  Mat intrinsics, distortion;
   bool mCrossDetect(Mat img, vector<Point2f> &cross);
   void mOpticalFlowHandle(Mat &previmg, Mat lastimg, vector<Point2f> &prev_pts, vector<Point2f> &orig_pts);
   void run();
