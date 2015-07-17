@@ -3,6 +3,7 @@
 ProcessingThread::ProcessingThread(TSDataHandler<Mat> *dh_in, TSDataHandler<Mat> *dh_out)
 {
   // добавление файлов калибровки
+  FileStorage intr, dist;
   if(intr.open("Intrinsics.xml", FileStorage::READ) && dist.open("Distortion.xml", FileStorage::READ))
   {
 		intr["Intrinsics"] >> intrinsics;
